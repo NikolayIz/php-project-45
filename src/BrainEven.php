@@ -25,7 +25,7 @@ function evenGame()
     $checkAnswer = true;
     $amountQuestions = 3;
     for ($i = 0; $i < $amountQuestions && $checkAnswer === true; $i++) {
-        $randomNum = rand(1, 999); #создаем рандомное число
+        $randomNum = random_int(1, 999); #создаем рандомное число
         line("Question: {$randomNum}"); #выводим число пользователю
         $userAnswer = prompt('Your answer'); #получаем ответ
         $rightAnswer = rightAnswerEvenGame($randomNum);
