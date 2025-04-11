@@ -38,15 +38,15 @@ function rightAnswerGameCalc($stringVal)
     $oper = $arrayStr[1];
     $numB = (int)$arrayStr[2];
     switch ($oper) {
-    	case "+":
-    		$result = $numA + $numB;
-    		break;
-    	case "-":
-    		$result = $numA - $numB;
-    		break;
-    	case "*":
-    		$result = $numA * $numB;
-    		break;
+        case "+":
+            $result = $numA + $numB;
+            break;
+        case "-":
+            $result = $numA - $numB;
+            break;
+        case "*":
+            $result = $numA * $numB;
+            break;
     }
     return (string)$result; //тип string потому что ответ пользователя принимается в string
 }

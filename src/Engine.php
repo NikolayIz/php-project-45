@@ -5,14 +5,12 @@ namespace BrainGames\Engine;
 use function cli\line;
 use function cli\prompt;
 
-
-function engineGame(callable $problemGame, callable $generateQuestion, callable $rightAnswerGame) //здесь engineGame который подгружается из файла Engine.php
+function engineGame(callable $problemGame, callable $generateQuestion, callable $rightAnswerGame)
 {
     //start
     line('Welcome to the Brain Game!');
     $name = prompt('May I have your name?');
     line("Hello, %s!", $name);
-    
     //условие задачи
     $problemStatement = $problemGame();
     line($problemStatement);
@@ -20,15 +18,15 @@ function engineGame(callable $problemGame, callable $generateQuestion, callable 
     $checkAnswer = true;
     $amountQuestions = 3;
     for ($i = 0; $i < $amountQuestions && $checkAnswer === true; $i++) {
-        $question = $generateQuestion(); #создаем вопрос из задачи
-        line("Question: {$question}"); #выводим вопрос пользователю
+        $question = $generateQuestion(); // создаем вопрос из задачи
+        line("Question: {$question}"); // выводим вопрос пользователю
 
-        $userAnswer = prompt('Your answer'); #получаем ответ от пользователя
-        $rightAnswer = $rightAnswerGame($question); #получаем правильный ответ задачи
-        if ($userAnswer === $rightAnswer) { #проверяем ответ
-            line("Correct!"); #если правильный
+        $userAnswer = prompt('Your answer'); // получаем ответ от пользователя
+        $rightAnswer = $rightAnswerGame($question); // получаем правильный ответ задачи
+        if ($userAnswer === $rightAnswer) { // проверяем ответ
+            line("Correct!"); // если правильный
             $checkAnswer = true;
-        } else { #если не правильный
+        } else { // если не правильный
             $message = "'{$userAnswer}' is wrong answer ;(. Correct answer was '{$rightAnswer}'." . PHP_EOL;
             $message .= "Let's try again, {$name}!";
             line($message);
