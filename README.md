@@ -22,5 +22,5 @@
 [![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=NikolayIz_php-project-45&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=NikolayIz_php-project-45)
 
 ### Video:
-[BrainEven] (https://asciinema.org/a/LIjvUTG5OBhI5u1aE2oGni5pG)
-[BrainCalc] (https://asciinema.org/a/L5tGHLQ6fiN3UiOtPiLe0VEUO)
+[BrainEven](https://asciinema.org/a/LIjvUTG5OBhI5u1aE2oGni5pG)
+[BrainCalc](https://asciinema.org/a/L5tGHLQ6fiN3UiOtPiLe0VEUO)
