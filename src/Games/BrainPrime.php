@@ -14,7 +14,7 @@ function problemGamePrime(): string
 function generateQuestionPrime(): int
 {
     $result = random_int(1, 99);
-    return (int) $result;
+    return $result;
 }
 
 function rightAnswerGamePrime(int $num): string

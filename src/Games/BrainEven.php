@@ -6,10 +6,10 @@ use function cli\line;
 use function cli\prompt;
 use function BrainGames\Engine\engineGame;
 
-function isEven($number): bool
+function isEven(int $number): bool
 {
     $result = $number % 2 === 0;
-    return (bool)$result;
+    return $result;
 }
 
 function problemGameEven(): string
@@ -25,7 +25,8 @@ function generateQuestionEven(): int
 
 function rightAnswerGameEven(int $num): string
 {
-    return isEven($num) ? "yes" : "no";
+    $result = isEven($num) ? "yes" : "no";
+    return $result;
 }
 
 function evenGame(): void

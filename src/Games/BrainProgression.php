@@ -29,7 +29,11 @@ function generateQuestionProgression(): string
 {
     $array = creatingProgression();
     $countArray = count($array);
-    $emptyNum = random_int(0, $countArray - 1);
+    if ($countArray > 5) {
+        $emptyNum = random_int(0, $countArray - 1);
+    } else {
+        $emptyNum = null;
+    }
     $array[$emptyNum] = '..';
     $stringFromArray = implode(' ', $array);
     $result = $stringFromArray;
@@ -43,13 +47,13 @@ function rightAnswerGameProgression(string $stringVal): string
     $stepProgress = 0;
     switch ($indexHideElement) {
         case 0:
-            $stepProgress = (int)$array[2] - (int)$array[1];
+            $stepProgress = $array[2] - $array[1];
             break;
         case 1:
-            $stepProgress = (int)$array[3] - (int)$array[2];
+            $stepProgress = $array[3] - $array[2];
             break;
         default:
-            $stepProgress = (int)$array[1] - (int)$array[0];
+            $stepProgress = $array[1] - $array[0];
     }
     if ($indexHideElement === 0) {
         $result = (int)$array[1] - (int)$stepProgress;
