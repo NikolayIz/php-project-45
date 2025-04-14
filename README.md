@@ -1,7 +1,7 @@
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/NikolayIz/php-project-45/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/NikolayIz/php-project-45/actions)
 
-[![Test Coverage](https://api.codeclimate.com/v1/badges/db02b82ec124cefe9df0/test_coverage)](https://codeclimate.com/github/NikolayIz/php-project-45/test_coverage)
+[![Maintainability](https://api.codeclimate.com/v1/badges/db02b82ec124cefe9df0/maintainability)](https://codeclimate.com/github/NikolayIz/php-project-45/maintainability)
 
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=NikolayIz_php-project-45&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=NikolayIz_php-project-45)
 
