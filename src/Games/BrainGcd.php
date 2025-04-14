@@ -6,20 +6,20 @@ use function cli\line;
 use function cli\prompt;
 use function BrainGames\Engine\engineGame;
 
-function problemGameGcd()
+function problemGameGcd(): string
 {
     $textProblem = 'Find the greatest common divisor of given numbers.';
     return $textProblem;
 }
 
-function generateQuestionGcd()
+function generateQuestionGcd(): string
 {
     $numA = random_int(1, 100);
     $numB = random_int(1, 100);
     return "{$numA} {$numB}";
 }
 
-function rightAnswerGameGcd($stringVal)
+function rightAnswerGameGcd(string $stringVal): string
 {
     $arrayStr = explode(' ', $stringVal);
     $a = (int)$arrayStr[0];
@@ -36,7 +36,7 @@ function rightAnswerGameGcd($stringVal)
     return (string)$result; //тип string потому что ответ пользователя принимается в string
 }
 
-function gcdGame()
+function gcdGame(): void
 {
     engineGame(
         'BrainGames\\Games\\BrainGcd\\problemGameGcd',

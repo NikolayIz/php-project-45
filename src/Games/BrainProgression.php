@@ -6,12 +6,12 @@ use function cli\line;
 use function cli\prompt;
 use function BrainGames\Engine\engineGame;
 
-function problemGameProgression()
+function problemGameProgression(): string
 {
     return 'What number is missing in the progression?';
 }
 
-function creatingProgression()
+function creatingProgression(): array
 {
     $arrayProgression = [];
     $start = random_int(1, 20);
@@ -25,7 +25,7 @@ function creatingProgression()
     return $arrayProgression;
 }
 
-function generateQuestionProgression()
+function generateQuestionProgression(): string
 {
     $array = creatingProgression();
     $countArray = count($array);
@@ -36,10 +36,10 @@ function generateQuestionProgression()
     return $result;
 }
 
-function rightAnswerGameProgression($stringVal)
+function rightAnswerGameProgression(string $stringVal): string
 {
     $array = explode(' ', $stringVal);
-    $indexHideElement = array_search('..', $array);
+    $indexHideElement = array_search('..', $array, false);
     $stepProgress = 0;
     switch ($indexHideElement) {
         case 0:
@@ -52,16 +52,16 @@ function rightAnswerGameProgression($stringVal)
             $stepProgress = (int)$array[1] - (int)$array[0];
     }
     if ($indexHideElement === 0) {
-        $result = $array[1] - $stepProgress;
+        $result = (int)$array[1] - (int)$stepProgress;
     } else {
-        $previousIndex = $indexHideElement - 1;
-        $result = $array[$previousIndex] + $stepProgress;
+        $previousIndex = (int)$indexHideElement - (int)1;
+        $result = (int)$array[$previousIndex] + (int)$stepProgress;
     }
 
     return (string)$result; //тип string потому что ответ пользователя принимается в string
 }
 
-function progressionGame()
+function progressionGame(): void
 {
     engineGame(
         'BrainGames\\Games\\BrainProgression\\problemGameProgression',

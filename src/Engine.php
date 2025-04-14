@@ -5,7 +5,7 @@ namespace BrainGames\Engine;
 use function cli\line;
 use function cli\prompt;
 
-function engineGame(callable $problemGame, callable $generateQuestion, callable $rightAnswerGame)
+function engineGame(callable $problemGame, callable $generateQuestion, callable $rightAnswerGame): void
 {
     //start
     line('Welcome to the Brain Game!');

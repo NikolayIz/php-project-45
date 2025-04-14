@@ -6,18 +6,18 @@ use function cli\line;
 use function cli\prompt;
 use function BrainGames\Engine\engineGame;
 
-function problemGamePrime()
+function problemGamePrime(): string
 {
     return 'Answer "yes" if given number is prime. Otherwise answer "no".';
 }
 
-function generateQuestionPrime()
+function generateQuestionPrime(): int
 {
     $result = random_int(1, 99);
     return (int) $result;
 }
 
-function rightAnswerGamePrime($num)
+function rightAnswerGamePrime(int $num): string
 {
     if ($num < 2) {
         return 'no';
@@ -36,7 +36,7 @@ function rightAnswerGamePrime($num)
     return 'yes';
 }
 
-function primeGame()
+function primeGame(): void
 {
     engineGame(
         'BrainGames\\Games\\BrainPrime\\problemGamePrime',

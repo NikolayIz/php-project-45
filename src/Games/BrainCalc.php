@@ -6,12 +6,12 @@ use function cli\line;
 use function cli\prompt;
 use function BrainGames\Engine\engineGame;
 
-function problemGameCalc()
+function problemGameCalc(): string
 {
     return 'What is the result of the expression?';
 }
 
-function generateQuestionCalc()
+function generateQuestionCalc(): string
 {
     $numA = random_int(1, 10);
     $numB = random_int(1, 10);
@@ -31,7 +31,7 @@ function generateQuestionCalc()
     return "{$numA} {$operator} {$numB}";
 }
 
-function rightAnswerGameCalc($stringVal)
+function rightAnswerGameCalc(string $stringVal): string
 {
     $arrayStr = explode(' ', $stringVal);
     $numA = (int)$arrayStr[0];
@@ -47,11 +47,13 @@ function rightAnswerGameCalc($stringVal)
         case "*":
             $result = $numA * $numB;
             break;
+        default:
+            $result = null;
     }
     return (string)$result; //тип string потому что ответ пользователя принимается в string
 }
 
-function calcGame()
+function calcGame(): void
 {
     engineGame(
         'BrainGames\\Games\\BrainCalc\\problemGameCalc',
