@@ -23,8 +23,8 @@
 
 [![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=NikolayIz_php-project-45&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=NikolayIz_php-project-45)
 
-### About Project
-## Проект "ИГРЫ РАЗУМА"
+## About Project
+### Проект "ИГРЫ РАЗУМА"
 Это учебный проект с 5 консольными играми, созданный в рамках курса по PHP на Hexlet.
 1. BrainEven игра на проверку чётности
 2. BrainCalc игра на высчитыванием суммы, разности или умножения
@@ -35,11 +35,16 @@
 ### How install and launch
 Чтобы запустить проект нужно:
 1. склонировать в свой репозиторий:
-git clone https://github.com/NikolayIz/php-project-45.git
-2. зайти в склонированный репозиторий и ввести команду "make install"
+<pre> ```bash git clone https://github.com/NikolayIz/php-project-45.git ``` </pre>
+
+2. зайти в склонированный репозиторий 
+и ввести команду
+ <pre> ```bash make install``` </pre>
 это нужно, чтобы установить все необходимые зависимости
-3. ввести команду make "название-игры"
-Названия игр: brain-even, brain-calc, brain-gcd, brain-progression, brain-prime.
+
+3. после установки для запуска игры нужно ввести команду
+<pre> ```bash make "название-игры"``` </pre>
+Названия игр: "brain-even", "brain-calc", "brain-gcd", "brain-progression", "brain-prime".
 Примеры запуска игры можно найти ниже в разделе Video
 
 ### Video:
