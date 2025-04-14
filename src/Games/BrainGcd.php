@@ -8,7 +8,8 @@ use function BrainGames\Engine\engineGame;
 
 function problemGameGcd()
 {
-    return 'Find the greatest common divisor of given numbers.';
+    $textProblem = 'Find the greatest common divisor of given numbers.';
+    return $textProblem;
 }
 
 function generateQuestionGcd()
@@ -24,12 +25,12 @@ function rightAnswerGameGcd($stringVal)
     $a = (int)$arrayStr[0];
     $b = (int)$arrayStr[1];
     $c = 0; //промежуточная переменная
-    //алгоритм Евклида by Nikolay Gagarinov (респект за подсказку):
+    //алгоритм Евклида by Nikolay Gagarinov:
     $result = $a;
     while ($b !== 0) {
-        $c = $b;
+        $temp = $b;
         $b = $a % $b;
-        $a = $c;
+        $a = $temp;
         $result = $a;
     }
     return (string)$result; //тип string потому что ответ пользователя принимается в string
