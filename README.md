@@ -26,3 +26,4 @@
 2. [BrainCalc](https://asciinema.org/a/L5tGHLQ6fiN3UiOtPiLe0VEUO)
 3. [BrainGcd](https://asciinema.org/a/wKqHYxlSvyYGrNPCxSPpxOFN0)
 4. [BrainProgression](https://asciinema.org/a/H4PSUL6PwQksyGu5CSzqz3Gel)
+5. [BrainPrime](https://asciinema.org/a/GpexDmBHwCR6PWB6VL7e6bkza)
