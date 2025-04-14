@@ -5,4 +5,4 @@ require_once __DIR__ . '/../vendor/autoload.php';
 
 use function BrainGames\Games\BrainPrime\primeGame;
 
-primeGame();
+primeGame(); #Запуск игры BrainPrime

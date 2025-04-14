@@ -5,4 +5,4 @@ require_once __DIR__ . '/../vendor/autoload.php';
 
 use function BrainGames\Games\BrainEven\evenGame;
 
-evenGame();
+evenGame(); #Запуск игры BrainEven
