@@ -43,22 +43,22 @@ function generateQuestionProgression(): string
 function rightAnswerGameProgression(string $stringVal): string
 {
     $array = explode(' ', $stringVal);
-    $indexHideElement = array_search('..', $array, false);
+    $indexHideElement = array_search('..', $array, true);
     $stepProgress = 0;
     switch ($indexHideElement) {
         case 0:
-            $stepProgress = $array[2] - $array[1];
+            $stepProgress = (int)$array[2] - (int)$array[1];
             break;
         case 1:
-            $stepProgress = $array[3] - $array[2];
+            $stepProgress = (int)$array[3] - (int)$array[2];
             break;
         default:
-            $stepProgress = $array[1] - $array[0];
+            $stepProgress = (int)$array[1] - (int)$array[0];
     }
     if ($indexHideElement === 0) {
         $result = (int)$array[1] - (int)$stepProgress;
     } else {
-        $previousIndex = (int)$indexHideElement - (int)1;
+        $previousIndex = (int)$indexHideElement - 1;
         $result = (int)$array[$previousIndex] + (int)$stepProgress;
     }
 
