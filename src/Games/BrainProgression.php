@@ -56,10 +56,10 @@ function rightAnswerGameProgression(string $stringVal): string
             $stepProgress = (int)$array[1] - (int)$array[0];
     }
     if ($indexHideElement === 0) {
-        $result = (int)$array[1] - (int)$stepProgress;
+        $result = (int)$array[1] - $stepProgress;
     } else {
         $previousIndex = (int)$indexHideElement - 1;
-        $result = (int)$array[$previousIndex] + (int)$stepProgress;
+        $result = (int)$array[$previousIndex] + $stepProgress;
     }
 
     return (string)$result; //тип string потому что ответ пользователя принимается в string
