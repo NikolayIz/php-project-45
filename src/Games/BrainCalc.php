@@ -4,7 +4,7 @@ namespace BrainGames\Games\BrainCalc;
 
 use function cli\line;
 use function cli\prompt;
-use function BrainGames\Engine\engineGame;
+use function BrainGames\Engine\launchEngineGame;
 
 function problemGameCalc(): string
 {
@@ -55,7 +55,7 @@ function rightAnswerGameCalc(string $stringVal): string
 
 function launchCalcGame(): void
 {
-    engineGame(
+    launchEngineGame(
         'BrainGames\\Games\\BrainCalc\\problemGameCalc',
         'BrainGames\\Games\\BrainCalc\\generateQuestionCalc',
         'BrainGames\\Games\\BrainCalc\\rightAnswerGameCalc'

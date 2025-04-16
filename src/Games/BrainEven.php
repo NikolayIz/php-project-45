@@ -4,7 +4,7 @@ namespace BrainGames\Games\BrainEven;
 
 use function cli\line;
 use function cli\prompt;
-use function BrainGames\Engine\engineGame;
+use function BrainGames\Engine\launchEngineGame;
 
 function isEven(int $number): bool
 {
@@ -31,7 +31,7 @@ function rightAnswerGameEven(int $num): string
 
 function launchEvenGame(): void
 {
-    engineGame(
+    launchEngineGame(
         'BrainGames\\Games\\BrainEven\\problemGameEven',
         'BrainGames\\Games\\BrainEven\\generateQuestionEven',
         'BrainGames\\Games\\BrainEven\\rightAnswerGameEven'

@@ -4,7 +4,7 @@ namespace BrainGames\Games\BrainPrime;
 
 use function cli\line;
 use function cli\prompt;
-use function BrainGames\Engine\engineGame;
+use function BrainGames\Engine\launchEngineGame;
 
 function problemGamePrime(): string
 {
@@ -38,7 +38,7 @@ function rightAnswerGamePrime(int $num): string
 
 function launchPrimeGame(): void
 {
-    engineGame(
+    launchEngineGame(
         'BrainGames\\Games\\BrainPrime\\problemGamePrime',
         'BrainGames\\Games\\BrainPrime\\generateQuestionPrime',
         'BrainGames\\Games\\BrainPrime\\rightAnswerGamePrime'

@@ -5,7 +5,7 @@ namespace BrainGames\Engine;
 use function cli\line;
 use function cli\prompt;
 
-function engineGame(callable $problemGame, callable $generateQuestion, callable $rightAnswerGame): void
+function launchEngineGame(callable $problemGame, callable $generateQuestion, callable $rightAnswerGame): void
 {
     //start
     line('Welcome to the Brain Game!');
@@ -16,8 +16,8 @@ function engineGame(callable $problemGame, callable $generateQuestion, callable 
     line($problemStatement);
 
     $checkAnswer = true;
-    $amountQuestions = 3;
-    for ($i = 0; $i < $amountQuestions && $checkAnswer === true; $i++) {
+    $questionCount = 3;
+    for ($i = 0; $i < $questionCount && $checkAnswer === true; $i++) {
         $question = $generateQuestion(); // создаем вопрос из задачи
         line("Question: {$question}"); // выводим вопрос пользователю
 

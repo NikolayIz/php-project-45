@@ -4,7 +4,7 @@ namespace BrainGames\Games\BrainGcd;
 
 use function cli\line;
 use function cli\prompt;
-use function BrainGames\Engine\engineGame;
+use function BrainGames\Engine\launchEngineGame;
 
 function problemGameGcd(): string
 {
@@ -38,7 +38,7 @@ function rightAnswerGameGcd(string $stringVal): string
 
 function launchGcdGame(): void
 {
-    engineGame(
+    launchEngineGame(
         'BrainGames\\Games\\BrainGcd\\problemGameGcd',
         'BrainGames\\Games\\BrainGcd\\generateQuestionGcd',
         'BrainGames\\Games\\BrainGcd\\rightAnswerGameGcd'
