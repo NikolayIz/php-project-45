@@ -36,7 +36,7 @@ function rightAnswerGameGcd(string $stringVal): string
     return (string)$result; //тип string потому что ответ пользователя принимается в string
 }
 
-function gcdGame(): void
+function launchGcdGame(): void
 {
     engineGame(
         'BrainGames\\Games\\BrainGcd\\problemGameGcd',

@@ -29,7 +29,7 @@ function rightAnswerGameEven(int $num): string
     return $result;
 }
 
-function evenGame(): void
+function launchEvenGame(): void
 {
     engineGame(
         'BrainGames\\Games\\BrainEven\\problemGameEven',

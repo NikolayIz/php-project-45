@@ -53,7 +53,7 @@ function rightAnswerGameCalc(string $stringVal): string
     return (string)$result; //тип string потому что ответ пользователя принимается в string
 }
 
-function calcGame(): void
+function launchCalcGame(): void
 {
     engineGame(
         'BrainGames\\Games\\BrainCalc\\problemGameCalc',

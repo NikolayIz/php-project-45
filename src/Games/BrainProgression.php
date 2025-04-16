@@ -65,7 +65,7 @@ function rightAnswerGameProgression(string $stringVal): string
     return (string)$result; //тип string потому что ответ пользователя принимается в string
 }
 
-function progressionGame(): void
+function launchProgressionGame(): void
 {
     engineGame(
         'BrainGames\\Games\\BrainProgression\\problemGameProgression',

@@ -36,7 +36,7 @@ function rightAnswerGamePrime(int $num): string
     return 'yes';
 }
 
-function primeGame(): void
+function launchPrimeGame(): void
 {
     engineGame(
         'BrainGames\\Games\\BrainPrime\\problemGamePrime',
