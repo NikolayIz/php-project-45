@@ -11,7 +11,7 @@ function getDescriptionGameCalc(): string
     return 'What is the result of the expression?';
 }
 
-function generateQuestionCalc(): string
+function generateQuestionGameCalc(): string
 {
     $numA = random_int(1, 10);
     $numB = random_int(1, 10);
@@ -31,9 +31,9 @@ function generateQuestionCalc(): string
     return "{$numA} {$operator} {$numB}";
 }
 
-function rightAnswerGameCalc(string $stringVal): string
+function getRightAnswerGameCalc(string $question): string
 {
-    $arrayStr = explode(' ', $stringVal);
+    $arrayStr = explode(' ', $question);
     $numA = (int)$arrayStr[0];
     $oper = $arrayStr[1];
     $numB = (int)$arrayStr[2];
@@ -56,8 +56,8 @@ function rightAnswerGameCalc(string $stringVal): string
 function launchCalcGame(): void
 {
     launchEngineGame(
-        'BrainGames\\Games\\BrainCalc\\getDescriptionGameCalc',
-        'BrainGames\\Games\\BrainCalc\\generateQuestionCalc',
-        'BrainGames\\Games\\BrainCalc\\rightAnswerGameCalc'
+        fn() => getDescriptionGameCalc(),
+        fn() => generateQuestionGameCalc(),
+        fn(string $question) => getRightAnswerGameCalc($question)
     );
 }

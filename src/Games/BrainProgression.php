@@ -25,7 +25,7 @@ function creatingProgression(): array
     return $arrayProgression;
 }
 
-function generateQuestionProgression(): string
+function generateQuestionGameProgression(): string
 {
     $array = creatingProgression();
     $countArray = count($array);
@@ -40,9 +40,9 @@ function generateQuestionProgression(): string
     return $result;
 }
 
-function rightAnswerGameProgression(string $stringVal): string
+function getRightAnswerGameProgression(string $question): string
 {
-    $array = explode(' ', $stringVal);
+    $array = explode(' ', $question);
     $indexHideElement = array_search('..', $array, true);
     $stepProgress = 0;
     switch ($indexHideElement) {
@@ -68,8 +68,8 @@ function rightAnswerGameProgression(string $stringVal): string
 function launchProgressionGame(): void
 {
     launchEngineGame(
-        'BrainGames\\Games\\BrainProgression\\getDescriptionGameProgression',
-        'BrainGames\\Games\\BrainProgression\\generateQuestionProgression',
-        'BrainGames\\Games\\BrainProgression\\rightAnswerGameProgression'
+        fn() => getDescriptionGameProgression(),
+        fn() => generateQuestionGameProgression(),
+        fn(string $question) => getRightAnswerGameProgression($question)
     );
 }

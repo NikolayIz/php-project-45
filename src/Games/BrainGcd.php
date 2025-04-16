@@ -11,16 +11,16 @@ function getDescriptionGameGcd(): string
     return 'Find the greatest common divisor of given numbers.';
 }
 
-function generateQuestionGcd(): string
+function generateQuestionGameGcd(): string
 {
     $numA = random_int(1, 100);
     $numB = random_int(1, 100);
     return "{$numA} {$numB}";
 }
 
-function rightAnswerGameGcd(string $stringVal): string
+function getRightAnswerGameGcd(string $question): string
 {
-    $arrayStr = explode(' ', $stringVal);
+    $arrayStr = explode(' ', $question);
     $a = (int)$arrayStr[0];
     $b = (int)$arrayStr[1];
     $temp = 0; //промежуточная переменная
@@ -38,8 +38,8 @@ function rightAnswerGameGcd(string $stringVal): string
 function launchGcdGame(): void
 {
     launchEngineGame(
-        'BrainGames\\Games\\BrainGcd\\getDescriptionGameGcd',
-        'BrainGames\\Games\\BrainGcd\\generateQuestionGcd',
-        'BrainGames\\Games\\BrainGcd\\rightAnswerGameGcd'
+        fn() => getDescriptionGameGcd(),
+        fn() => generateQuestionGameGcd(),
+        fn(string $question) => getRightAnswerGameGcd($question)
     );
 }

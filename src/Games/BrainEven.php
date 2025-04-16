@@ -17,23 +17,23 @@ function getDescriptionGameEven(): string
     return 'Answer "yes" if the number is even, otherwise answer "no".';
 }
 
-function generateQuestionEven(): int
+function generateQuestionGameEven(): int
 {
     $randomNum = random_int(1, 999);
     return $randomNum;
 }
 
-function rightAnswerGameEven(int $num): string
+function getRightAnswerGameEven(int $question): string
 {
-    $result = isEven($num) ? "yes" : "no";
+    $result = isEven($question) ? "yes" : "no";
     return $result;
 }
 
 function launchEvenGame(): void
 {
     launchEngineGame(
-        'BrainGames\\Games\\BrainEven\\getDescriptionGameEven',
-        'BrainGames\\Games\\BrainEven\\generateQuestionEven',
-        'BrainGames\\Games\\BrainEven\\rightAnswerGameEven'
+        fn() => getDescriptionGameEven(),
+        fn() => generateQuestionGameEven(),
+        fn(string $question) => getRightAnswerGameEven($question)
     );
 }

@@ -17,16 +17,16 @@ function generateQuestionPrime(): int
     return $result;
 }
 
-function rightAnswerGamePrime(int $num): string
+function getRightAnswerGamePrime(int $question): string
 {
-    if ($num < 2) {
+    if ($question < 2) {
         return 'no';
-    } elseif ($num === 2) {
+    } elseif ($question === 2) {
         return  'yes';
-    } elseif (($num % 2) === 0) {
+    } elseif (($question % 2) === 0) {
         return  'no';
     }
-    $sqrtNum = sqrt($num);
+    $sqrtNum = sqrt($question);
     for ($i = 3; $i <= $sqrtNum; $i++) {
         $currentNum = $i;
         if ($num % $currentNum === 0) {
@@ -39,8 +39,8 @@ function rightAnswerGamePrime(int $num): string
 function launchPrimeGame(): void
 {
     launchEngineGame(
-        'BrainGames\\Games\\BrainPrime\\getDescriptionGamePrime',
-        'BrainGames\\Games\\BrainPrime\\generateQuestionPrime',
-        'BrainGames\\Games\\BrainPrime\\rightAnswerGamePrime'
+        fn() => getDescriptionGamePrime(),
+        fn() => generateQuestionGamePrime(),
+        fn(string $question) => getRightAnswerGamePrime($question)
     );
 }
