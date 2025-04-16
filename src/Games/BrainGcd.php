@@ -6,10 +6,9 @@ use function cli\line;
 use function cli\prompt;
 use function BrainGames\Engine\launchEngineGame;
 
-function problemGameGcd(): string
+function getDescriptionGameGcd(): string
 {
-    $textProblem = 'Find the greatest common divisor of given numbers.';
-    return $textProblem;
+    return 'Find the greatest common divisor of given numbers.';
 }
 
 function generateQuestionGcd(): string
@@ -24,7 +23,7 @@ function rightAnswerGameGcd(string $stringVal): string
     $arrayStr = explode(' ', $stringVal);
     $a = (int)$arrayStr[0];
     $b = (int)$arrayStr[1];
-    $c = 0; //промежуточная переменная
+    $temp = 0; //промежуточная переменная
     //алгоритм Евклида by Nikolay Gagarinov:
     $result = $a;
     while ($b !== 0) {
@@ -39,7 +38,7 @@ function rightAnswerGameGcd(string $stringVal): string
 function launchGcdGame(): void
 {
     launchEngineGame(
-        'BrainGames\\Games\\BrainGcd\\problemGameGcd',
+        'BrainGames\\Games\\BrainGcd\\getDescriptionGameGcd',
         'BrainGames\\Games\\BrainGcd\\generateQuestionGcd',
         'BrainGames\\Games\\BrainGcd\\rightAnswerGameGcd'
     );

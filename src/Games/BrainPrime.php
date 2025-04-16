@@ -6,7 +6,7 @@ use function cli\line;
 use function cli\prompt;
 use function BrainGames\Engine\launchEngineGame;
 
-function problemGamePrime(): string
+function getDescriptionGamePrime(): string
 {
     return 'Answer "yes" if given number is prime. Otherwise answer "no".';
 }
@@ -39,7 +39,7 @@ function rightAnswerGamePrime(int $num): string
 function launchPrimeGame(): void
 {
     launchEngineGame(
-        'BrainGames\\Games\\BrainPrime\\problemGamePrime',
+        'BrainGames\\Games\\BrainPrime\\getDescriptionGamePrime',
         'BrainGames\\Games\\BrainPrime\\generateQuestionPrime',
         'BrainGames\\Games\\BrainPrime\\rightAnswerGamePrime'
     );

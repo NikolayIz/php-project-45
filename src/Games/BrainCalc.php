@@ -6,7 +6,7 @@ use function cli\line;
 use function cli\prompt;
 use function BrainGames\Engine\launchEngineGame;
 
-function problemGameCalc(): string
+function getDescriptionGameCalc(): string
 {
     return 'What is the result of the expression?';
 }
@@ -56,7 +56,7 @@ function rightAnswerGameCalc(string $stringVal): string
 function launchCalcGame(): void
 {
     launchEngineGame(
-        'BrainGames\\Games\\BrainCalc\\problemGameCalc',
+        'BrainGames\\Games\\BrainCalc\\getDescriptionGameCalc',
         'BrainGames\\Games\\BrainCalc\\generateQuestionCalc',
         'BrainGames\\Games\\BrainCalc\\rightAnswerGameCalc'
     );

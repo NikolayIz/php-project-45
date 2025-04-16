@@ -12,7 +12,7 @@ function isEven(int $number): bool
     return $result;
 }
 
-function problemGameEven(): string
+function getDescriptionGameEven(): string
 {
     return 'Answer "yes" if the number is even, otherwise answer "no".';
 }
@@ -32,7 +32,7 @@ function rightAnswerGameEven(int $num): string
 function launchEvenGame(): void
 {
     launchEngineGame(
-        'BrainGames\\Games\\BrainEven\\problemGameEven',
+        'BrainGames\\Games\\BrainEven\\getDescriptionGameEven',
         'BrainGames\\Games\\BrainEven\\generateQuestionEven',
         'BrainGames\\Games\\BrainEven\\rightAnswerGameEven'
     );

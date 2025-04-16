@@ -6,7 +6,7 @@ use function cli\line;
 use function cli\prompt;
 use function BrainGames\Engine\launchEngineGame;
 
-function problemGameProgression(): string
+function getDescriptionGameProgression(): string
 {
     return 'What number is missing in the progression?';
 }
@@ -68,7 +68,7 @@ function rightAnswerGameProgression(string $stringVal): string
 function launchProgressionGame(): void
 {
     launchEngineGame(
-        'BrainGames\\Games\\BrainProgression\\problemGameProgression',
+        'BrainGames\\Games\\BrainProgression\\getDescriptionGameProgression',
         'BrainGames\\Games\\BrainProgression\\generateQuestionProgression',
         'BrainGames\\Games\\BrainProgression\\rightAnswerGameProgression'
     );
