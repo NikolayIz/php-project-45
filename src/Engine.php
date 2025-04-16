@@ -27,8 +27,8 @@ function launchEngineGame(callable $problemGame, callable $generateQuestion, cal
             line("Correct!"); // если правильный
             $checkAnswer = true;
         } else { // если не правильный
-            $message = "'{$userAnswer}' is wrong answer ;(. Correct answer was '{$rightAnswer}'." . PHP_EOL;
-            $message .= "Let's try again, {$name}!";
+            $message = "'{$userAnswer}' is wrong answer ;(. Correct answer was '{$rightAnswer}'\n"
+            . "Let's try again, {$name}!";
             line($message);
             $checkAnswer = false;
         }

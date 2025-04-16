@@ -16,7 +16,7 @@ function generateQuestionCalc(): string
     $numA = random_int(1, 10);
     $numB = random_int(1, 10);
     $operatorNum = random_int(1, 3);
-    $operator = '?';
+    $operator = ' ';
     switch ($operatorNum) {
         case 1:
             $operator = '+';
