@@ -17,16 +17,21 @@ function getDescriptionGameEven(): string
     return 'Answer "yes" if the number is even, otherwise answer "no".';
 }
 
-function generateQuestionGameEven(): int
+function generateQuestionGameEven(): array
 {
     $randomNum = random_int(1, 999);
-    return $randomNum;
+    return ['randomNum' => $randomNum];
 }
 
-function getRightAnswerGameEven(int $question): string
+function getRightAnswerGameEven(array $question): string
 {
-    $result = isEven($question) ? "yes" : "no";
-    return $result;
+    $result = isEven($question['randomNum']) ? "yes" : "no";
+    return $result; // правильный ответ обязательно в string
+}
+
+function getQuestionTextGameEven(array $question): string
+{
+    return "{$question['randomNum']}";
 }
 
 function launchEvenGame(): void
@@ -34,6 +39,7 @@ function launchEvenGame(): void
     launchEngineGame(
         fn() => getDescriptionGameEven(),
         fn() => generateQuestionGameEven(),
-        fn(string $question) => getRightAnswerGameEven($question)
+        fn(array $question) => getRightAnswerGameEven($question),
+        fn(array $question) => getQuestionTextGameEven($question)
     );
 }
