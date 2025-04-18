@@ -25,51 +25,53 @@ function creatingProgression(): array
     return $arrayProgression;
 }
 
-function generateQuestionGameProgression(): string
+function generateQuestionGameProgression(): array
 {
-    $array = creatingProgression();
-    $countArray = count($array);
+    $arrayProgression = creatingProgression();
+    $countArray = count($arrayProgression);
     if ($countArray > 5) {
         $emptyNum = random_int(0, $countArray - 1);
     } else {
         $emptyNum = null;
     }
-    $array[$emptyNum] = '..';
-    $stringFromArray = implode(' ', $array);
-    $result = $stringFromArray;
-    return $result;
+    $arrayProgression[$emptyNum] = '..';
+    return $arrayProgression;
 }
 
-function getRightAnswerGameProgression(string $question): string
+function getRightAnswerGameProgression(array $question): string
 {
-    $array = explode(' ', $question);
-    $indexHideElement = array_search('..', $array, true);
+    $indexHideElement = array_search('..', $question, true);
     $stepProgress = 0;
     switch ($indexHideElement) {
         case 0:
-            $stepProgress = (int)$array[2] - (int)$array[1];
+            $stepProgress = (int)$question[2] - (int)$question[1];
             break;
         case 1:
-            $stepProgress = (int)$array[3] - (int)$array[2];
+            $stepProgress = (int)$question[3] - (int)$question[2];
             break;
         default:
-            $stepProgress = (int)$array[1] - (int)$array[0];
+            $stepProgress = (int)$question[1] - (int)$question[0];
     }
     if ($indexHideElement === 0) {
-        $result = (int)$array[1] - $stepProgress;
+        $result = (int)$question[1] - $stepProgress;
     } else {
         $previousIndex = (int)$indexHideElement - 1;
-        $result = (int)$array[$previousIndex] + $stepProgress;
+        $result = (int)$question[$previousIndex] + $stepProgress;
     }
 
     return (string)$result; //тип string потому что ответ пользователя принимается в string
 }
 
+function getQuestionTextGameProgression(array $question): string
+{
+    return implode(' ', $question);
+}
 function launchProgressionGame(): void
 {
     launchEngineGame(
         fn() => getDescriptionGameProgression(),
         fn() => generateQuestionGameProgression(),
-        fn(string $question) => getRightAnswerGameProgression($question)
+        fn(array $question) => getRightAnswerGameProgression($question),
+        fn(array $question) => getQuestionTextGameProgression($question)
     );
 }
