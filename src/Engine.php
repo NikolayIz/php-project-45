@@ -5,8 +5,12 @@ namespace BrainGames\Engine;
 use function cli\line;
 use function cli\prompt;
 
-function launchEngineGame(callable $problemGame, callable $generateQuestion, callable $rightAnswerGame): void
-{
+function launchEngineGame(
+    callable $problemGame,
+    callable $generateQuestion,
+    callable $rightAnswerGame,
+    callable $arrayToString
+): void {
     //start
     line('Welcome to the Brain Game!');
     $name = prompt('May I have your name?');
@@ -18,11 +22,12 @@ function launchEngineGame(callable $problemGame, callable $generateQuestion, cal
     $checkAnswer = true;
     $questionCount = 3;
     for ($i = 0; $i < $questionCount && $checkAnswer === true; $i++) {
-        $question = $generateQuestion(); // создаем вопрос из задачи
-        line("Question: {$question}"); // выводим вопрос пользователю
+        $questionData = $generateQuestion(); // получаем вопрос в виде массива
+        $questionText = $arrayToString($questionData); // переводим вопрос в текст
+        line("Question: {$questionText}"); // выводим вопрос пользователю
 
         $userAnswer = prompt('Your answer'); // получаем ответ от пользователя
-        $rightAnswer = $rightAnswerGame($question); // получаем правильный ответ задачи
+        $rightAnswer = $rightAnswerGame($questionData); // получаем правильный ответ задачи
         if ($userAnswer === $rightAnswer) { // проверяем ответ
             line("Correct!"); // если правильный
             $checkAnswer = true;
