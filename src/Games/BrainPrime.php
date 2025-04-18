@@ -11,22 +11,23 @@ function getDescriptionGamePrime(): string
     return 'Answer "yes" if given number is prime. Otherwise answer "no".';
 }
 
-function generateQuestionPrime(): int
+function generateQuestionGamePrime(): array
 {
-    $result = random_int(1, 99);
-    return $result;
+    $randomNum = random_int(1, 99);
+    return ["randomNum" => $randomNum];
 }
 
-function getRightAnswerGamePrime(int $question): string
+function getRightAnswerGamePrime(array $question): string
 {
-    if ($question < 2) {
+    $num = $question["randomNum"];
+    if ($num < 2) {
         return 'no';
-    } elseif ($question === 2) {
+    } elseif ($num === 2) {
         return  'yes';
-    } elseif (($question % 2) === 0) {
+    } elseif (($num % 2) === 0) {
         return  'no';
     }
-    $sqrtNum = sqrt($question);
+    $sqrtNum = sqrt($num);
     for ($i = 3; $i <= $sqrtNum; $i++) {
         $currentNum = $i;
         if ($num % $currentNum === 0) {
@@ -36,11 +37,17 @@ function getRightAnswerGamePrime(int $question): string
     return 'yes';
 }
 
+function getQuestionTextGamePrime(array $question): string
+{
+    return "{$question["randomNum"]}";
+}
+
 function launchPrimeGame(): void
 {
     launchEngineGame(
         fn() => getDescriptionGamePrime(),
         fn() => generateQuestionGamePrime(),
-        fn(string $question) => getRightAnswerGamePrime($question)
+        fn(array $question) => getRightAnswerGamePrime($question),
+        fn(array $question) => getQuestionTextGamePrime($question)
     );
 }
