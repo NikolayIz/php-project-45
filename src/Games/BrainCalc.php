@@ -15,17 +15,18 @@ function calculateExpression(int $num1, string $operator, int $num2): ?int
 {
     switch ($operator) {
         case "+":
-            return $num1 + $num2;
+            $result = $num1 + $num2;
             break;
         case "-":
-            return $num1 - $num2;
+            $result = $num1 - $num2;
             break;
         case "*":
-            return $num1 * $num2;
+            $result = $num1 * $num2;
             break;
         default:
-            return null;
+            $result = null;
     }
+    return $result;
 }
 
 function generateQuestionGameCalc(): array
